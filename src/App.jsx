@@ -47,12 +47,7 @@ const projects = [
     tools: ["Python", "FastAPI", "JavaScript", "Vercel"],
     image: "/versemate.png",
     imageAlt: "VerseMate AI companion home screen",
-    links: [
-      {
-        label: "Try VerseMate",
-        href: "https://verse-mate-vercel-17w2-pbhyfrcix-feaakin-7041s-projects.vercel.app",
-      },
-    ],
+    links: [],
   },
 
   {
@@ -71,12 +66,7 @@ const projects = [
     tools: ["Figma", "LLM-guided conversation design"],
     image: "/sage.png",
     imageAlt: "SAGE substance use screening prototype",
-    links: [
-      {
-        label: "View Figma prototype",
-        href: "https://www.figma.com/design/HDEFIucJSGQyhPzrsqAu7V/SAGE---Screening?node-id=11-81&t=10uK8yTkYKEttVG1-1",
-      },
-    ],
+    links: [],
   },
 
   {
