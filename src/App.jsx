@@ -580,12 +580,6 @@ function ProjectCard({ project }) {
               <span>IMPACT / STATUS</span>
               <p>{project.impact}</p>
             </div>
-
-            <div className="tool-list">
-              {project.tools.map((tool) => (
-                <span key={tool}>{tool}</span>
-              ))}
-            </div>
           </div>
         )}
 
