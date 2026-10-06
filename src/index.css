@@ -1,0 +1,6722 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #2c2823;
+  background: #f7f3ec;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  --cream: #f7f3ec;
+  --cream-light: #fbf9f5;
+  --paper: #fffdf9;
+  --brown: #2c2823;
+  --brown-soft: #665f55;
+  --gold: #b28a4a;
+  --gold-light: #d7bd8a;
+  --line: #ddd5c9;
+  --white: #ffffff;
+  --dark: #201d19;
+  --sage: #8e9984;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--cream);
+  color: var(--brown);
+}
+
+body,
+button,
+a {
+  font-family: "DM Sans", sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: #d8c39d;
+  color: #211d18;
+}
+
+/* --------------------------------------------------
+   GLOBAL
+-------------------------------------------------- */
+
+.site-shell {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.section-pad {
+  padding-left: clamp(1.25rem, 5vw, 6rem);
+  padding-right: clamp(1.25rem, 5vw, 6rem);
+}
+
+.eyebrow {
+  margin: 0 0 1.1rem;
+  color: var(--gold);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.section-intro {
+  max-width: 850px;
+  margin-bottom: 4.5rem;
+}
+
+.section-intro h2,
+.recognition-heading h2,
+.contact-inner h2,
+.leadership-content h2 {
+  margin: 0;
+  color: var(--brown);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.section-description {
+  max-width: 650px;
+  margin: 1.7rem 0 0;
+  color: var(--brown-soft);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* --------------------------------------------------
+   NAVIGATION
+-------------------------------------------------- */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 78px;
+  padding: 0 clamp(1.25rem, 5vw, 6rem);
+  border-bottom: 1px solid rgba(44, 40, 35, 0.08);
+  background: rgba(247, 243, 236, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.nav-logo {
+  color: var(--brown);
+  font-family: "Playfair Display", serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+}
+
+.nav-logo span,
+.footer strong span {
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.2rem, 2.5vw, 2.5rem);
+}
+
+.nav-links > a {
+  position: relative;
+  color: #5d574f;
+
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+
+  transition:
+    color 200ms ease,
+    transform 180ms ease;
+}
+
+.nav-links > a:hover {
+  color: var(--gold);
+  transform: translateY(-1px);
+}
+
+.nav-resume {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--brown);
+}
+
+.nav-resume:hover {
+  background: var(--brown);
+  color: white !important;
+}
+
+.mobile-menu {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: var(--brown);
+}
+
+/* --------------------------------------------------
+   HERO
+-------------------------------------------------- */
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.8fr);
+  align-items: center;
+  gap: clamp(3rem, 7vw, 8rem);
+  min-height: 100vh;
+  padding-top: calc(clamp(4rem, 8vw, 8rem) + 78px);
+  padding-bottom: clamp(5rem, 8vw, 8rem);
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(210, 188, 148, 0.22),
+      transparent 28%
+    ),
+    var(--cream);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin: 0;
+  color: var(--brown);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(4rem, 8vw, 8.7rem);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 0.88;
+}
+
+.hero h1 em {
+  color: var(--gold);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.hero-intro {
+  max-width: 650px;
+  margin: 2rem 0 0;
+  color: var(--brown-soft);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.8;
+}
+
+.hero-credentials {
+  display: flex;
+  flex-wrap: wrap;
+
+  column-gap: 0.6rem;
+  row-gap: 1.25rem;
+
+  max-width: 700px;
+  margin-top: 1.8rem;
+}
+
+.hero-credentials span {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 253, 249, 0.55);
+  color: #625b52;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 48px;
+  padding: 0.75rem 1.1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-dark {
+  background: var(--brown);
+  color: white;
+}
+
+.button-dark:hover {
+  background: #171512;
+}
+
+.button-outline {
+  border: 1px solid #8b8277;
+  color: var(--brown);
+}
+
+.button-outline:hover {
+  background: var(--paper);
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 620px;
+}
+
+.hero-photo-frame {
+  position: absolute;
+  top: -2rem;
+  right: -4%;
+  width: min(112%, 560px);
+  height: min(82vh, 720px);
+  min-height: 560px;
+  overflow: hidden;
+  border-radius: 48% 48% 4% 4% / 34% 34% 4% 4%;
+  background: #ddd4c6;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 7%;
+  transform: scale(1);
+}
+
+.hero-orbit {
+  position: absolute;
+  right: -1rem;
+  bottom: 6rem;
+  display: grid;
+  width: 118px;
+  height: 118px;
+  place-items: center;
+  border: 1px solid rgba(178, 138, 74, 0.5);
+  border-radius: 50%;
+  background: rgba(247, 243, 236, 0.9);
+  box-shadow: 0 15px 45px rgba(50, 42, 32, 0.1);
+}
+
+.orbit-inner {
+  width: 88px;
+  color: var(--brown);
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.8;
+  text-align: center;
+  animation: slowRotate 20s linear infinite;
+}
+
+@keyframes slowRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-caption {
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.hero-caption span {
+  color: var(--gold);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.hero-caption p {
+  margin: 0;
+  color: #776f64;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 1.8rem;
+  left: clamp(1.25rem, 5vw, 6rem);
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: #777067;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.scroll-cue svg {
+  color: var(--gold);
+}
+
+/* --------------------------------------------------
+   ABOUT
+-------------------------------------------------- */
+
+.about-section {
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+  background: var(--paper);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.75fr);
+  gap: clamp(3rem, 9vw, 9rem);
+  align-items: start;
+}
+
+.about-copy {
+  max-width: 760px;
+}
+
+.about-copy p {
+  margin: 0 0 1.5rem;
+  color: #5e574f;
+  font-size: 1.15rem;
+  line-height: 1.85;
+}
+
+.about-copy .about-lead {
+  margin-bottom: 2.2rem;
+  color: var(--brown);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 3.2vw, 2.9rem);
+  line-height: 1.2;
+}
+
+.about-copy .about-closing {
+  margin-top: 2.4rem;
+  color: var(--gold);
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-style: italic;
+  line-height: 1.25;
+}
+
+.about-photo-column {
+  position: sticky;
+  top: 110px;
+}
+
+.about-photo-main {
+  aspect-ratio: 0.82;
+  overflow: hidden;
+  background: #d9d0c3;
+  border-radius: 48% 48% 10% 10% / 24% 24% 8% 8%;
+  box-shadow: 18px 18px 0 rgba(115, 90, 72, 0.1);
+}
+
+.about-photo-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.about-note {
+  margin-top: 1.4rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.about-note span {
+  display: block;
+  margin-bottom: 0.7rem;
+  color: var(--gold);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.about-note p,
+.about-note .about-verse {
+  color: var(--brown);
+  font-family: "Playfair Display", serif;
+  font-size: 1.35rem;
+  line-height: 1.5;
+}
+
+.about-note small {
+  display: block;
+  margin-top: 0.8rem;
+  color: var(--gold);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* --------------------------------------------------
+   PROJECTS / SELECTED WORK
+-------------------------------------------------- */
+
+.work-section {
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+  background: #eee8de;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.project-card,
+.project-featured {
+  display: grid;
+  grid-column: auto;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
+  overflow: hidden;
+  border: 1px solid rgba(69, 61, 50, 0.12);
+  background: var(--paper);
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 60px rgba(54, 45, 34, 0.09);
+}
+
+.project-image-wrap,
+.project-visual,
+.project-featured .project-image-wrap {
+  position: relative;
+  min-height: 320px;
+  height: 100%;
+  overflow: hidden;
+  background: #d5cec1;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.025);
+}
+
+.project-number,
+.project-number-static {
+  position: absolute;
+  top: 1.1rem;
+  left: 1.1rem;
+  z-index: 2;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(33, 29, 24, 0.55);
+  color: white;
+  font-size: 0.82rem;
+  font-weight: 700;
+  backdrop-filter: blur(8px);
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.5rem, 3vw, 2.35rem);
+}
+
+.project-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.project-eyebrow {
+  margin: 0;
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+/* Larger status badges such as "Research in Progress" */
+.project-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 44px;
+  padding: 0.7rem 1rem;
+  background: #efe5d2;
+  color: #715a32;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.project-content h3 {
+  margin: 0;
+  color: var(--brown);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.3rem, 3.4vw, 3.4rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.project-tagline {
+  margin: 1rem 0 0;
+  color: #504940;
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.project-description {
+  max-width: 650px;
+  margin: 1.3rem 0 0;
+  color: #6a6259;
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+.details-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--brown);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.details-button svg {
+  transition: transform 180ms ease;
+}
+
+.rotate-arrow svg {
+  transform: rotate(180deg);
+}
+
+.project-details {
+  margin-top: 1.2rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+}
+
+.project-details > p {
+  margin: 0;
+  color: #655e56;
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+.impact-block {
+  margin-top: 1.3rem;
+  padding: 1.15rem;
+  background: #f4eee4;
+}
+
+.impact-block span {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--gold);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.impact-block p {
+  margin: 0;
+  color: var(--brown);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.tool-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.1rem;
+}
+
+.tool-list span {
+  padding: 0.5rem 0.72rem;
+  border: 1px solid var(--line);
+  color: #6a6259;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--brown);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.project-link:hover {
+  color: var(--gold);
+}
+
+.project-link-disabled {
+  color: #948b7e;
+  cursor: default;
+}
+
+.coming-soon {
+  padding-left: 0.25rem;
+  color: #a89e90;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.project-visual {
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  background:
+    linear-gradient(
+      135deg,
+      #c7b99f 0%,
+      #e7dfd2 50%,
+      #b9aa90 100%
+    );
+}
+
+.project-markel {
+  background:
+    linear-gradient(
+      135deg,
+      #d4d8d1 0%,
+      #edf0eb 52%,
+      #bfc8bd 100%
+    );
+}
+
+.project-number-static {
+  position: relative;
+  top: auto;
+  left: auto;
+  margin-bottom: 2rem;
+}
+
+.visual-small {
+  max-width: 260px;
+  margin: 0 0 0.7rem;
+  color: rgba(44, 40, 35, 0.62);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.5;
+}
+
+.visual-large {
+  max-width: 420px;
+  margin: 0;
+  color: var(--brown);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 0.84;
+}
+
+/* --------------------------------------------------
+   EXPERIENCE
+-------------------------------------------------- */
+
+.experience-section {
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+  background: var(--paper);
+}
+
+.experience-list {
+  border-top: 1px solid var(--line);
+}
+
+.experience-item {
+  display: grid;
+  grid-template-columns: 135px 130px minmax(0, 1fr) 30px;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.experience-year {
+  color: var(--gold);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+}
+
+.brand-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 105px;
+  min-height: 72px;
+  padding: 0.65rem;
+  background: #fffdf9;
+  color: var(--brown);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.brand-mark img {
+  width: 100%;
+  height: 58px;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-mark span {
+  display: none;
+}
+
+.brand-mark.brand-markel,
+.brand-mark.brand-morgan,
+.brand-mark.brand-ceamls {
+  background: #fffdf9;
+  border: none;
+}
+
+.experience-main h3 {
+  margin: 0;
+  color: var(--brown);
+  font-family: "Playfair Display", serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.experience-org {
+  margin: 0.4rem 0 0;
+  color: #665e55;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.experience-location {
+  margin: 0.25rem 0 0;
+  color: #91877b;
+  font-size: 0.7rem;
+}
+
+.experience-main > p:last-child {
+  max-width: 720px;
+  margin: 1rem 0 0;
+  color: #70685e;
+  font-size: 0.87rem;
+  line-height: 1.75;
+}
+
+.experience-arrow {
+  color: #9e9487;
+}
+
+/* --------------------------------------------------
+   LEADERSHIP
+-------------------------------------------------- */
+
+.leadership-section {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.75fr) minmax(0, 1.25fr);
+  background: #3a3027;
+}
+
+.leadership-photo {
+  position: relative;
+  min-height: 780px;
+  overflow: hidden;
+}
+
+.leadership-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.78);
+}
+
+.leadership-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(33, 26, 20, 0.78),
+      rgba(33, 26, 20, 0.05) 60%
+    );
+}
+
+.leadership-photo-caption {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  left: 2rem;
+  color: white;
+}
+
+.leadership-photo-caption span {
+  color: #ddbd7d;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.leadership-photo-caption p {
+  margin: 0.6rem 0 0;
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.leadership-content {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(180, 145, 94, 0.18),
+      transparent 30%
+    ),
+    #3a3027;
+}
+
+.leadership-content h2 {
+  max-width: 850px;
+  color: #f7f1e7;
+}
+
+.leadership-list {
+  margin-top: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.leadership-item {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.8fr) minmax(0, 1fr);
+  gap: 2rem;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.leadership-date {
+  color: #c4a56d;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.leadership-item h3 {
+  margin: 0.5rem 0 0;
+  color: #fffaf1;
+  font-family: "Playfair Display", serif;
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.leadership-org {
+  margin: 0.35rem 0 0;
+  color: #c6baab;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.leadership-item > p {
+  margin: 0;
+  color: #cfc4b7;
+  font-size: 0.83rem;
+  line-height: 1.75;
+}
+
+/* --------------------------------------------------
+   RECOGNITION
+-------------------------------------------------- */
+
+.recognition-section,
+.programs-section {
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+  background: var(--cream);
+}
+
+.programs-section {
+  padding-top: 0;
+  background: var(--cream);
+}
+
+.recognition-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.recognition-heading > p {
+  max-width: 440px;
+  margin: 0;
+  color: #70675d;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.award-card {
+  min-height: 220px;
+  padding: 1.5rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 253, 249, 0.42);
+}
+
+.award-card > span {
+  color: var(--gold);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.award-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.15rem;
+}
+
+.award-topline b {
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.award-card h3 {
+  margin: 2rem 0 0.5rem;
+  color: var(--brown);
+  font-family: "Playfair Display", serif;
+  font-size: 1.55rem;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.award-card p {
+  margin: 0;
+  color: #665e54;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.award-card small {
+  display: block;
+  margin-top: 1rem;
+  color: #91877a;
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+.award-highlight {
+  display: inline-flex;
+  width: fit-content;
+  margin: 0.85rem 0 0.6rem;
+  padding: 0.38rem 0.6rem;
+  border-left: 2px solid var(--gold);
+  background: rgba(174, 135, 77, 0.08);
+  color: var(--brown);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.program-card {
+  min-height: 285px;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.program-card.program-standout {
+  border-color: #c4a56e;
+  background: #f4ebdc;
+}
+
+.program-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.program-top span {
+  color: var(--gold);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.program-top b {
+  max-width: 58%;
+  padding: 0.3rem 0.45rem;
+  background: var(--brown);
+  color: var(--gold);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-align: right;
+}
+
+.program-card h3 {
+  margin: 2rem 0 0.5rem;
+  color: var(--brown);
+  font-family: "Playfair Display", serif;
+  font-size: 1.65rem;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.program-org {
+  margin: 0;
+  color: #655c52;
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.program-card > p:last-child {
+  margin: 1rem 0 0;
+  color: #80766a;
+  font-size: 0.76rem;
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------
+   CONTACT
+-------------------------------------------------- */
+
+.contact-section {
+  padding-top: 10rem;
+  padding-bottom: 7rem;
+  background: #30241d;
+  color: white;
+}
+
+.contact-inner {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.contact-inner h2 {
+  color: #f8f1e6;
+  font-size: clamp(3.5rem, 8vw, 8rem);
+}
+
+.contact-inner h2 em {
+  color: #c7a66d;
+  font-style: italic;
+}
+
+.contact-copy {
+  max-width: 650px;
+  margin: 2rem 0 0;
+  color: #bcb2a6;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.contact-links {
+  margin-top: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.contact-link {
+  display: grid;
+  grid-template-columns: 100px 1fr 30px;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  color: #f6eee4;
+  transition: color 180ms ease;
+}
+
+.contact-link:hover {
+  color: #d0ad72;
+}
+
+.contact-link > span:first-child {
+  color: #9e9386;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contact-link > span:nth-child(2) {
+  font-size: 0.9rem;
+}
+
+.contact-link svg {
+  justify-self: end;
+}
+
+/* --------------------------------------------------
+   FOOTER
+-------------------------------------------------- */
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: end;
+  padding: 2rem clamp(1.25rem, 5vw, 6rem);
+  background: #241b16;
+  color: #91887c;
+}
+
+.footer strong {
+  color: #f6eee4;
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+}
+
+.footer strong span {
+  color: var(--gold);
+}
+
+.footer p {
+  margin: 0.35rem 0 0;
+  font-size: 0.67rem;
+}
+
+.footer > p {
+  margin: 0;
+  text-align: center;
+}
+
+.footer > a {
+  justify-self: end;
+  color: #c8b79e;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------
+   RESPONSIVE
+-------------------------------------------------- */
+
+@media (max-width: 1050px) {
+  .hero {
+    grid-template-columns: 1fr 0.75fr;
+    gap: 3rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.7rem, 7vw, 6.5rem);
+  }
+
+  .hero-photo-frame {
+    right: 0;
+    width: 100%;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card,
+  .project-featured {
+    grid-column: auto;
+  }
+
+  .awards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .nav {
+    min-height: 70px;
+  }
+
+  .mobile-menu {
+    display: block;
+    position: relative;
+    z-index: 110;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.8rem 1.25rem 1.3rem;
+    border-bottom: 1px solid var(--line);
+    background: rgba(247, 243, 236, 0.98);
+    box-shadow: 0 15px 30px rgba(30, 25, 20, 0.06);
+  }
+
+  .nav-links.nav-open {
+    display: flex;
+  }
+
+  .nav-links > a {
+    padding: 0.85rem 0;
+  }
+
+  .nav-resume {
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: calc(4.5rem + 70px);
+  }
+
+  .hero h1 {
+    font-size: clamp(3.6rem, 13vw, 6rem);
+  }
+
+  .hero-visual {
+    min-height: 620px;
+  }
+
+  .hero-photo-frame {
+    position: relative;
+    right: auto;
+    width: 88%;
+    height: 600px;
+    margin: 0 auto;
+  }
+
+  .hero-orbit {
+    right: 0;
+  }
+
+  .scroll-cue {
+    position: static;
+    margin-top: 2rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-photo-column {
+    position: static;
+    max-width: 520px;
+  }
+
+  .about-copy p {
+    font-size: 1.08rem;
+    line-height: 1.8;
+  }
+
+  .about-copy .about-lead {
+    font-size: clamp(1.9rem, 4vw, 2.5rem);
+  }
+
+  .about-copy .about-closing {
+    font-size: 1.8rem;
+  }
+
+  .about-note .about-verse {
+    font-size: 1.3rem;
+  }
+
+  .project-card,
+  .project-featured {
+    display: block;
+    grid-template-columns: none;
+  }
+
+  .project-image-wrap,
+  .project-visual,
+  .project-featured .project-image-wrap {
+    min-height: 300px;
+    height: auto;
+  }
+
+  .project-content {
+    padding: 1.7rem;
+  }
+
+  .project-eyebrow {
+    font-size: 0.78rem;
+  }
+
+  .project-badge {
+    min-height: 42px;
+    padding: 0.62rem 0.9rem;
+    font-size: 0.8rem;
+  }
+
+  .project-content h3 {
+    font-size: clamp(2.15rem, 7vw, 3rem);
+  }
+
+  .project-tagline {
+    font-size: 1.18rem;
+  }
+
+  .project-description {
+    font-size: 1.04rem;
+    line-height: 1.85;
+  }
+
+  .details-button {
+    font-size: 0.88rem;
+  }
+
+  .project-details > p {
+    font-size: 1.04rem;
+    line-height: 1.85;
+  }
+
+  .impact-block span {
+    font-size: 0.72rem;
+  }
+
+  .impact-block p {
+    font-size: 0.98rem;
+  }
+
+  .tool-list span {
+    font-size: 0.74rem;
+  }
+
+  .project-link {
+    font-size: 0.84rem;
+  }
+
+  .experience-item {
+    grid-template-columns: 100px 100px minmax(0, 1fr);
+  }
+
+  .experience-arrow {
+    display: none;
+  }
+
+  .leadership-section {
+    grid-template-columns: 1fr;
+  }
+
+  .leadership-photo {
+    min-height: 550px;
+  }
+
+  .leadership-item {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .recognition-heading {
+    display: block;
+  }
+
+  .recognition-heading > p {
+    margin-top: 1.5rem;
+  }
+
+  .program-top b {
+    max-width: 48%;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .footer > p {
+    text-align: left;
+  }
+
+  .footer > a {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 580px) {
+  .section-pad {
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+  }
+
+  .hero {
+    padding-top: calc(3.5rem + 70px);
+    padding-bottom: 4rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.2rem, 17vw, 5rem);
+  }
+
+  .hero-intro {
+    font-size: 0.95rem;
+  }
+
+  .hero-photo-frame {
+    width: 94%;
+    height: 520px;
+    min-height: 520px;
+  }
+
+  .hero-orbit {
+    width: 100px;
+    height: 100px;
+    right: -0.1rem;
+    bottom: 5rem;
+  }
+
+  .hero-caption {
+    left: 0;
+  }
+
+  .about-section,
+  .work-section,
+  .experience-section,
+  .recognition-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .section-intro {
+    margin-bottom: 3rem;
+  }
+
+  .section-intro h2,
+  .recognition-heading h2,
+  .contact-inner h2,
+  .leadership-content h2 {
+    font-size: clamp(2.4rem, 12vw, 4rem);
+  }
+
+  .about-copy p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .about-copy .about-lead {
+    font-size: 1.8rem;
+  }
+
+  .about-copy .about-closing {
+    font-size: 1.65rem;
+  }
+
+  .about-note {
+    padding: 1.35rem;
+  }
+
+  .about-note .about-verse {
+    font-size: 1.18rem;
+    line-height: 1.5;
+  }
+
+  .project-image-wrap,
+  .project-visual,
+  .project-featured .project-image-wrap {
+    min-height: 300px;
+  }
+
+  .project-content {
+    padding: 1.5rem;
+  }
+
+  .project-eyebrow {
+    font-size: 0.76rem;
+  }
+
+  .project-badge {
+    min-height: 40px;
+    padding: 0.6rem 0.82rem;
+    font-size: 0.76rem;
+  }
+
+  .project-content h3 {
+    font-size: 2.15rem;
+  }
+
+  .project-tagline {
+    font-size: 1.12rem;
+  }
+
+  .project-description {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .project-details > p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .details-button {
+    font-size: 0.84rem;
+  }
+
+  .impact-block span {
+    font-size: 0.7rem;
+  }
+
+  .impact-block p {
+    font-size: 0.94rem;
+  }
+
+  .tool-list span {
+    font-size: 0.71rem;
+  }
+
+  .project-link {
+    font-size: 0.8rem;
+  }
+
+  .visual-large {
+    font-size: 4rem;
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .brand-mark {
+    width: 100px;
+  }
+
+  .awards-grid,
+  .programs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .award-card {
+    min-height: 180px;
+  }
+
+  .leadership-photo {
+    min-height: 470px;
+  }
+
+  .leadership-content {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .contact-section {
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+  }
+
+  .contact-link {
+    grid-template-columns: 75px 1fr 20px;
+  }
+
+  .contact-link > span:nth-child(2) {
+    font-size: 0.76rem;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   FINAL REFINEMENTS
+========================================================= */
+
+/* Remove rotating VISION / PURPOSE / IMPACT element */
+
+.hero-orbit,
+.orbit-inner {
+  display: none !important;
+}
+
+/* ABOUT
+   Softer editorial frame for the About portrait.
+*/
+
+.about-photo-main {
+  overflow: hidden;
+  border-radius: 48% 48% 10% 10% / 24% 24% 8% 8%;
+  box-shadow: 18px 18px 0 rgba(115, 90, 72, 0.1);
+}
+
+.about-photo-main img {
+  object-position: center top;
+}
+
+/* Guiding principle / Bible verse */
+
+.about-note .about-verse {
+  margin: 0;
+  color: var(--brown);
+  font-family: "Playfair Display", serif;
+  font-size: 1.35rem;
+  line-height: 1.5;
+}
+
+.about-note small {
+  display: block;
+  margin-top: 0.8rem;
+  color: var(--gold);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* =========================================================
+   SELECTED WORK — FINAL LARGE TYPE REFINEMENT
+========================================================= */
+
+.projects-grid {
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.project-card,
+.project-featured {
+  display: grid;
+  grid-column: auto;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
+}
+
+.project-image-wrap,
+.project-visual,
+.project-featured .project-image-wrap {
+  min-height: 320px;
+  height: 100%;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.5rem, 3vw, 2.35rem);
+}
+
+/* Project metadata */
+.project-eyebrow {
+  font-size: 0.8rem;
+}
+
+/* Larger "Research in Progress", "Project Lead", etc. */
+.project-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 44px;
+  padding: 0.7rem 1rem;
+  font-size: 0.86rem;
+  line-height: 1.25;
+}
+
+/* Project title */
+.project-content h3 {
+  font-size: clamp(2.3rem, 3.4vw, 3.4rem);
+  line-height: 1;
+}
+
+/* Tagline */
+.project-tagline {
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+/* Main project description */
+.project-description {
+  max-width: 650px;
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+/* View Details */
+.details-button {
+  font-size: 0.92rem;
+}
+
+/* Expanded details */
+.project-details {
+  margin-top: 1.2rem;
+  padding-top: 1.4rem;
+}
+
+.project-details > p {
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+/* Impact section */
+.impact-block {
+  padding: 1.15rem;
+}
+
+.impact-block span {
+  font-size: 0.74rem;
+}
+
+.impact-block p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Technology / skill pills */
+.tool-list {
+  gap: 0.5rem;
+}
+
+.tool-list span {
+  padding: 0.5rem 0.72rem;
+  font-size: 0.78rem;
+}
+
+/* Project links */
+.project-link {
+  font-size: 0.88rem;
+}
+
+/* Coming soon text */
+.coming-soon {
+  font-size: 0.7rem;
+}
+
+/* Project image numbers */
+.project-number,
+.project-number-static {
+  width: 42px;
+  height: 42px;
+  font-size: 0.82rem;
+}
+
+/* Visual text */
+.visual-small {
+  max-width: 260px;
+  line-height: 1.5;
+  font-size: 0.82rem;
+}
+
+.visual-large {
+  max-width: 420px;
+}
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.brand-mark {
+  min-height: 72px;
+  padding: 0.65rem;
+  background: #fffdf9;
+}
+
+.brand-mark img {
+  width: 100%;
+  height: 58px;
+  object-fit: contain;
+}
+
+.brand-mark span {
+  display: none;
+}
+
+/* =========================================================
+   LEADERSHIP
+========================================================= */
+
+.leadership-photo img {
+  object-position: center;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section {
+  background: #30241d;
+}
+
+.footer {
+  background: #241b16;
+}
+
+/* =========================================================
+   MOBILE SELECTED WORK
+========================================================= */
+
+@media (max-width: 800px) {
+  .project-card,
+  .project-featured {
+    display: block;
+    grid-template-columns: none;
+  }
+
+  .project-image-wrap,
+  .project-visual,
+  .project-featured .project-image-wrap {
+    min-height: 300px;
+    height: auto;
+  }
+
+  .project-content {
+    padding: 1.7rem;
+  }
+
+  .project-eyebrow {
+    font-size: 0.78rem;
+  }
+
+  .project-badge {
+    min-height: 42px;
+    padding: 0.62rem 0.9rem;
+    font-size: 0.8rem;
+  }
+
+  .project-content h3 {
+    font-size: clamp(2.15rem, 7vw, 3rem);
+  }
+
+  .project-tagline {
+    font-size: 1.18rem;
+  }
+
+  .project-description {
+    font-size: 1.04rem;
+    line-height: 1.85;
+  }
+
+  .details-button {
+    font-size: 0.88rem;
+  }
+
+  .project-details {
+    padding-top: 1.3rem;
+  }
+
+  .project-details > p {
+    font-size: 1.04rem;
+    line-height: 1.85;
+  }
+
+  .impact-block span {
+    font-size: 0.72rem;
+  }
+
+  .impact-block p {
+    font-size: 0.98rem;
+  }
+
+  .tool-list span {
+    font-size: 0.74rem;
+  }
+
+  .project-link {
+    font-size: 0.84rem;
+  }
+}
+
+/* =========================================================
+   AWARDS
+========================================================= */
+
+.award-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.15rem;
+}
+
+.award-topline b {
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.award-highlight {
+  display: inline-flex;
+  width: fit-content;
+  margin: 0.85rem 0 0.6rem;
+  padding: 0.38rem 0.6rem;
+  border-left: 2px solid var(--gold);
+  background: rgba(174, 135, 77, 0.08);
+  color: var(--brown);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* =========================================================
+   SELECTED OPPORTUNITIES
+========================================================= */
+
+.program-top b {
+  max-width: 58%;
+  text-align: right;
+  color: var(--gold);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+}
+
+/* =========================================================
+   ACTUAL EXPERIENCE LOGOS
+========================================================= */
+
+.brand-mark {
+  min-height: 72px;
+  padding: 0.65rem;
+  background: #fffdf9;
+}
+
+.brand-mark img {
+  width: 100%;
+  height: 58px;
+  object-fit: contain;
+}
+
+.brand-mark span {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .program-top b {
+    max-width: 48%;
+  }
+}
+
+/* =========================================================
+   FINAL SELECTED WORK MOBILE SIZING
+========================================================= */
+
+@media (max-width: 580px) {
+  .project-badge {
+    min-height: 40px;
+    padding: 0.6rem 0.82rem;
+    font-size: 0.76rem;
+  }
+
+  .project-content h3 {
+    font-size: 2.15rem;
+  }
+
+  .project-tagline {
+    font-size: 1.12rem;
+  }
+
+  .project-description {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .details-button {
+    font-size: 0.84rem;
+  }
+
+  .project-details > p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .impact-block span {
+    font-size: 0.7rem;
+  }
+
+  .impact-block p {
+    font-size: 0.94rem;
+  }
+
+  .tool-list span {
+    font-size: 0.71rem;
+  }
+
+  .project-link {
+    font-size: 0.8rem;
+  }
+
+}
+
+/* =========================================================
+   NEUROVA IMAGE POSITIONING
+========================================================= */
+
+.project-card:has(
+  img[alt="Neurova EEG pain detection research prototype"]
+) .project-image {
+  object-fit: cover;
+  object-position: 38% center;
+}
+/* =========================================================
+   NEUROVA — SHOW FULL COVER IMAGE
+========================================================= */
+
+.project-image.neurova-image {
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #f4f1eb;
+  padding: 0;
+}
+
+.project-image-wrap:has(.neurova-image) {
+  background: #f4f1eb;
+}
+
+/* =========================================================
+   EXPERIENCE — FINAL ENLARGED VERSION
+   Keep this at the VERY BOTTOM of the CSS file.
+========================================================= */
+
+.experience-section {
+  padding-top: 9rem;
+  padding-bottom: 10rem;
+  background: var(--paper);
+}
+
+.experience-list {
+  border-top: 1px solid var(--line);
+}
+
+/* =========================================================
+   EXPERIENCE ROW
+========================================================= */
+
+.experience-item {
+  display: grid;
+
+  /*
+    Date
+    Large logo
+    Experience content
+    Arrow
+  */
+  grid-template-columns:
+    180px
+    290px
+    minmax(0, 1fr)
+    42px;
+
+  gap: clamp(2.5rem, 4vw, 4.5rem);
+
+  align-items: center;
+
+  padding: 4rem 0;
+
+  border-bottom: 1px solid var(--line);
+}
+
+/* =========================================================
+   DATE — LARGER + MORE VISIBLE
+========================================================= */
+
+.experience-year {
+  color: #a87932;
+
+  font-size: 1.1rem;
+  font-weight: 700;
+
+  letter-spacing: 0.09em;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   LOGOS — EXTRA LARGE
+========================================================= */
+
+.brand-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 275px;
+  height: 175px;
+  min-height: 175px;
+
+  padding: 0.25rem;
+
+  background: #fffdf9;
+
+  color: var(--brown);
+
+  font-size: 0.8rem;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+/* Actual logo image */
+
+.brand-mark img {
+  display: block;
+
+  width: 100%;
+  height: 165px;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Hide fallback logo text */
+
+.brand-mark span {
+  display: none;
+}
+
+/* Keep all logo containers consistent */
+
+.brand-mark.brand-markel,
+.brand-mark.brand-morgan,
+.brand-mark.brand-ceamls,
+.brand-mark.brand-hax {
+  width: 275px;
+  height: 175px;
+  min-height: 175px;
+
+  padding: 0.25rem;
+
+  background: #fffdf9;
+
+  border: none;
+}
+
+/* =========================================================
+   EXPERIENCE TEXT
+========================================================= */
+
+.experience-main {
+  width: 100%;
+  max-width: 1050px;
+}
+
+/* Job title */
+
+.experience-main h3 {
+  margin: 0;
+
+  color: var(--brown);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(2.5rem, 3vw, 3.25rem);
+  font-weight: 500;
+
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+/* Company / organization */
+
+.experience-org {
+  margin: 0.8rem 0 0;
+
+  color: #5d554c;
+
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  line-height: 1.5;
+}
+
+/* Location */
+
+.experience-location {
+  margin: 0.35rem 0 0;
+
+  color: #8d8377;
+
+  font-size: 0.98rem;
+  font-weight: 500;
+
+  line-height: 1.5;
+}
+
+/* Description */
+
+.experience-main > p:last-child {
+  width: 100%;
+  max-width: 1000px;
+
+  margin: 1.5rem 0 0;
+
+  color: #6b635a;
+
+  font-size: 1.2rem;
+  font-weight: 400;
+
+  line-height: 1.8;
+}
+
+/* =========================================================
+   EXPERIENCE ARROW
+========================================================= */
+
+.experience-arrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  color: #9e9487;
+
+  transform: scale(1.35);
+}
+
+/* =========================================================
+   EXPERIENCE — MEDIUM DESKTOP / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .experience-item {
+    grid-template-columns:
+      145px
+      225px
+      minmax(0, 1fr)
+      32px;
+
+    gap: 2.25rem;
+
+    padding: 3.5rem 0;
+  }
+
+  .experience-year {
+    color: #a87932;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    letter-spacing: 0.09em;
+    line-height: 1.55;
+  }
+
+  .brand-mark,
+  .brand-mark.brand-markel,
+  .brand-mark.brand-morgan,
+  .brand-mark.brand-ceamls,
+  .brand-mark.brand-hax {
+    width: 215px;
+    height: 140px;
+    min-height: 140px;
+
+    padding: 0.3rem;
+  }
+
+  .brand-mark img {
+    height: 130px;
+  }
+
+  .experience-main h3 {
+    font-size: clamp(2.15rem, 2.8vw, 2.7rem);
+  }
+
+  .experience-org {
+    font-size: 1.08rem;
+  }
+
+  .experience-location {
+    font-size: 0.9rem;
+  }
+
+  .experience-main > p:last-child {
+    font-size: 1.08rem;
+  }
+}
+
+/* =========================================================
+   EXPERIENCE — TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .experience-section {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+
+  .experience-item {
+    grid-template-columns:
+      110px
+      180px
+      minmax(0, 1fr);
+
+    gap: 1.75rem;
+
+    align-items: center;
+
+    padding: 3rem 0;
+  }
+
+  .experience-year {
+    color: #a87932;
+
+    font-size: 0.92rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+  }
+
+  .brand-mark,
+  .brand-mark.brand-markel,
+  .brand-mark.brand-morgan,
+  .brand-mark.brand-ceamls,
+  .brand-mark.brand-hax {
+    width: 170px;
+    height: 120px;
+    min-height: 120px;
+
+    padding: 0.35rem;
+  }
+
+  .brand-mark img {
+    height: 110px;
+  }
+
+  .experience-main h3 {
+    font-size: 2rem;
+
+    line-height: 1.08;
+  }
+
+  .experience-org {
+    margin-top: 0.6rem;
+
+    font-size: 1rem;
+  }
+
+  .experience-location {
+    font-size: 0.84rem;
+  }
+
+  .experience-main > p:last-child {
+    margin-top: 1.1rem;
+
+    font-size: 1rem;
+
+    line-height: 1.75;
+  }
+
+  .experience-arrow {
+    display: none;
+  }
+}
+
+/* =========================================================
+   EXPERIENCE — MOBILE
+========================================================= */
+
+@media (max-width: 580px) {
+
+  .experience-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .experience-item {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 1.15rem;
+
+    align-items: start;
+
+    padding: 3rem 0;
+  }
+
+  .experience-year {
+    margin-bottom: 0.15rem;
+
+    color: #a87932;
+
+    font-size: 0.92rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+  }
+
+  .brand-mark,
+  .brand-mark.brand-markel,
+  .brand-mark.brand-morgan,
+  .brand-mark.brand-ceamls,
+  .brand-mark.brand-hax {
+    width: 215px;
+    height: 135px;
+    min-height: 135px;
+
+    padding: 0.3rem;
+  }
+
+  .brand-mark img {
+    height: 125px;
+  }
+
+  .experience-main {
+    margin-top: 0.45rem;
+  }
+
+  .experience-main h3 {
+    font-size: 2.15rem;
+
+    line-height: 1.08;
+  }
+
+  .experience-org {
+    margin-top: 0.6rem;
+
+    font-size: 1.05rem;
+  }
+
+  .experience-location {
+    margin-top: 0.3rem;
+
+    font-size: 0.86rem;
+  }
+
+  .experience-main > p:last-child {
+    margin-top: 1.1rem;
+
+    font-size: 1.04rem;
+
+    line-height: 1.78;
+  }
+
+  .experience-arrow {
+    display: none;
+  }
+}
+
+/* =========================================================
+   GLOBAL SECTION HEADINGS — ENLARGED
+   Keep this BELOW the Experience override block.
+========================================================= */
+
+/* =========================================================
+   SMALL GOLD SECTION LABELS
+   ABOUT / SELECTED WORK / EXPERIENCE / AWARDS & HONORS
+========================================================= */
+
+.eyebrow {
+  margin: 0 0 1.35rem;
+
+  color: var(--gold);
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+  line-height: 1.4;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   MAIN SECTION TITLES
+
+   Examples:
+   "A product mind with a purpose..."
+   "Ideas are easy..."
+   "Where I turn curiosity into capability."
+   "Proof points, not just titles."
+   "Rooms I was invited into."
+========================================================= */
+
+.section-intro h2,
+.recognition-heading h2,
+.leadership-content h2 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(3.4rem, 5.8vw, 6.2rem);
+  font-weight: 500;
+
+  letter-spacing: -0.05em;
+  line-height: 0.96;
+}
+
+/* Standard light-background headings */
+
+.section-intro h2,
+.recognition-heading h2 {
+  color: var(--brown);
+}
+
+/* Leadership heading stays light because of dark background */
+
+.leadership-content h2 {
+  color: #f7f1e7;
+}
+
+/* =========================================================
+   SECTION INTRO DESCRIPTIONS
+========================================================= */
+
+.section-description {
+  max-width: 760px;
+
+  margin: 2rem 0 0;
+
+  color: var(--brown-soft);
+
+  font-size: 1.2rem;
+
+  line-height: 1.8;
+}
+
+/* Give heading areas a little more space */
+
+.section-intro {
+  max-width: 1000px;
+
+  margin-bottom: 5.5rem;
+}
+
+/* =========================================================
+   AWARDS + SELECTED OPPORTUNITIES HEADINGS
+========================================================= */
+
+.recognition-heading {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 4rem;
+
+  margin-bottom: 5rem;
+}
+
+.recognition-heading > p {
+  max-width: 500px;
+
+  margin: 0;
+
+  color: #70675d;
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+}
+
+/* =========================================================
+   LEADERSHIP SECTION
+========================================================= */
+
+.leadership-content > .eyebrow {
+  font-size: 0.9rem;
+}
+
+.leadership-content h2 {
+  max-width: 950px;
+}
+
+/* =========================================================
+   CONTACT SECTION TITLE
+========================================================= */
+
+.contact-inner h2 {
+  margin: 0;
+
+  color: #f8f1e6;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(4.5rem, 8vw, 8.5rem);
+  font-weight: 500;
+
+  letter-spacing: -0.055em;
+  line-height: 0.92;
+}
+
+.contact-copy {
+  max-width: 720px;
+
+  margin: 2.25rem 0 0;
+
+  color: #bcb2a6;
+
+  font-size: 1.15rem;
+
+  line-height: 1.8;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .eyebrow {
+    margin-bottom: 1.15rem;
+
+    font-size: 0.8rem;
+  }
+
+  .section-intro h2,
+  .recognition-heading h2,
+  .leadership-content h2 {
+    font-size: clamp(3rem, 8vw, 4.6rem);
+
+    line-height: 0.98;
+  }
+
+  .section-description {
+    margin-top: 1.6rem;
+
+    font-size: 1.08rem;
+  }
+
+  .section-intro {
+    margin-bottom: 4rem;
+  }
+
+  .recognition-heading {
+    display: block;
+
+    margin-bottom: 4rem;
+  }
+
+  .recognition-heading > p {
+    max-width: 650px;
+
+    margin-top: 1.75rem;
+
+    font-size: 1rem;
+  }
+
+  .contact-inner h2 {
+    font-size: clamp(4rem, 11vw, 6.5rem);
+  }
+
+  .contact-copy {
+    font-size: 1.05rem;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 580px) {
+
+  .eyebrow {
+    margin-bottom: 1rem;
+
+    font-size: 0.76rem;
+
+    letter-spacing: 0.17em;
+  }
+
+  .section-intro h2,
+  .recognition-heading h2,
+  .leadership-content h2 {
+    font-size: clamp(2.8rem, 12vw, 4rem);
+
+    letter-spacing: -0.045em;
+    line-height: 0.98;
+  }
+
+  .section-description {
+    margin-top: 1.4rem;
+
+    font-size: 1.02rem;
+
+    line-height: 1.75;
+  }
+
+  .section-intro {
+    margin-bottom: 3.5rem;
+  }
+
+  .recognition-heading {
+    margin-bottom: 3.5rem;
+  }
+
+  .recognition-heading > p {
+    margin-top: 1.5rem;
+
+    font-size: 0.98rem;
+
+    line-height: 1.75;
+  }
+
+  .contact-inner h2 {
+    font-size: clamp(3.4rem, 15vw, 5.2rem);
+
+    line-height: 0.94;
+  }
+
+  .contact-copy {
+    margin-top: 1.75rem;
+
+    font-size: 1.02rem;
+  }
+}
+/* =========================================================
+   LEADERSHIP — FINAL ENLARGED VERSION
+   Keep this at the VERY BOTTOM of the CSS file.
+========================================================= */
+
+/* =========================================================
+   LEADERSHIP LIST
+========================================================= */
+
+.leadership-list {
+  margin-top: 5rem;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* =========================================================
+   INDIVIDUAL LEADERSHIP OPPORTUNITY
+========================================================= */
+
+.leadership-item {
+  display: grid;
+
+  /*
+    Left side = date, title, organization
+    Right side = description
+  */
+  grid-template-columns:
+    minmax(300px, 0.9fr)
+    minmax(0, 1.1fr);
+
+  gap: clamp(3rem, 5vw, 6rem);
+
+  align-items: center;
+
+  padding: 3.2rem 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.leadership-date {
+  display: block;
+
+  color: #d4b77e;
+
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+  line-height: 1.5;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   ROLE TITLE
+========================================================= */
+
+.leadership-item h3 {
+  margin: 0.8rem 0 0;
+
+  color: #fffaf1;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(2rem, 2.7vw, 2.75rem);
+  font-weight: 500;
+
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+/* =========================================================
+   ORGANIZATION
+========================================================= */
+
+.leadership-org {
+  max-width: 500px;
+
+  margin: 0.7rem 0 0;
+
+  color: #d1c4b5;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.leadership-item > p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #d4c9bd;
+
+  font-size: 1.08rem;
+  font-weight: 400;
+
+  line-height: 1.85;
+}
+
+/* =========================================================
+   MEDIUM DESKTOP / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .leadership-list {
+    margin-top: 4.5rem;
+  }
+
+  .leadership-item {
+    grid-template-columns:
+      minmax(250px, 0.9fr)
+      minmax(0, 1.1fr);
+
+    gap: 2.5rem;
+
+    padding: 2.8rem 0;
+  }
+
+  .leadership-date {
+    font-size: 0.76rem;
+  }
+
+  .leadership-item h3 {
+    font-size: clamp(1.8rem, 2.5vw, 2.3rem);
+  }
+
+  .leadership-org {
+    font-size: 0.94rem;
+  }
+
+  .leadership-item > p {
+    font-size: 1rem;
+
+    line-height: 1.8;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .leadership-list {
+    margin-top: 4rem;
+  }
+
+  .leadership-item {
+    grid-template-columns: 1fr;
+
+    gap: 1.5rem;
+
+    padding: 2.75rem 0;
+  }
+
+  .leadership-date {
+    font-size: 0.75rem;
+  }
+
+  .leadership-item h3 {
+    margin-top: 0.65rem;
+
+    font-size: 2rem;
+  }
+
+  .leadership-org {
+    margin-top: 0.55rem;
+
+    font-size: 0.95rem;
+  }
+
+  .leadership-item > p {
+    max-width: 700px;
+
+    font-size: 1rem;
+
+    line-height: 1.78;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 580px) {
+
+  .leadership-list {
+    margin-top: 3.5rem;
+  }
+
+  .leadership-item {
+    gap: 1.3rem;
+
+    padding: 2.5rem 0;
+  }
+
+  .leadership-date {
+    font-size: 0.72rem;
+
+    letter-spacing: 0.12em;
+  }
+
+  .leadership-item h3 {
+    margin-top: 0.6rem;
+
+    font-size: 1.9rem;
+
+    line-height: 1.1;
+  }
+
+  .leadership-org {
+    margin-top: 0.5rem;
+
+    font-size: 0.92rem;
+
+    line-height: 1.55;
+  }
+
+  .leadership-item > p {
+    font-size: 0.98rem;
+
+    line-height: 1.75;
+  }
+}
+
+/* =========================================================
+   AWARDS & HONORS — ENLARGED + VISUAL HIERARCHY
+   Keep this at the VERY BOTTOM of the CSS file.
+========================================================= */
+
+/* =========================================================
+   AWARDS GRID
+========================================================= */
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+/* =========================================================
+   INDIVIDUAL AWARD CARD
+========================================================= */
+
+.award-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 320px;
+
+  padding: clamp(2rem, 2.7vw, 2.8rem);
+
+  overflow: hidden;
+
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+
+  background: rgba(255, 253, 249, 0.58);
+
+  transition:
+    transform 250ms ease,
+    background 250ms ease,
+    box-shadow 250ms ease;
+}
+
+/* Gold accent line at top */
+
+.award-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 3px;
+
+  background: var(--gold);
+
+  transition: width 350ms ease;
+}
+
+/* Hover */
+
+.award-card:hover {
+  transform: translateY(-5px);
+
+  background: var(--paper);
+
+  box-shadow: 0 22px 50px rgba(54, 45, 34, 0.08);
+}
+
+.award-card:hover::before {
+  width: 100%;
+}
+
+/* =========================================================
+   YEAR + HONOR
+========================================================= */
+
+.award-topline {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1.5rem;
+
+  margin-bottom: 2rem;
+}
+
+.award-topline span {
+  color: var(--gold);
+
+  font-size: 0.84rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+}
+
+/* HONOR pill */
+
+.award-topline b {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.45rem 0.7rem;
+
+  border: 1px solid rgba(178, 138, 74, 0.35);
+
+  background: rgba(178, 138, 74, 0.08);
+
+  color: var(--gold);
+
+  font-size: 0.66rem;
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   AWARD TITLE
+========================================================= */
+
+.award-card h3 {
+  margin: 0;
+
+  color: var(--brown);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(2rem, 2.4vw, 2.65rem);
+  font-weight: 500;
+
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+/* =========================================================
+   ORGANIZATION
+========================================================= */
+
+.award-card > p {
+  margin: 0.9rem 0 0;
+
+  color: #655d54;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   ACHIEVEMENT HIGHLIGHT
+========================================================= */
+
+.award-highlight {
+  display: inline-flex;
+
+  align-items: center;
+
+  width: fit-content;
+
+  margin: 1.7rem 0 0;
+
+  padding: 0.75rem 1rem;
+
+  border-left: 3px solid var(--gold);
+
+  background: #f0e6d5;
+
+  color: #60491f;
+
+  font-size: 0.92rem;
+  font-weight: 700;
+
+  letter-spacing: 0.015em;
+  line-height: 1.45;
+
+  transition:
+    transform 220ms ease,
+    background 220ms ease;
+}
+
+.award-card:hover .award-highlight {
+  transform: translateX(4px);
+
+  background: #eadbc2;
+}
+
+/* =========================================================
+   BOTTOM DETAIL
+========================================================= */
+
+.award-card small {
+  display: block;
+
+  margin-top: auto;
+  padding-top: 1.8rem;
+
+  color: #877d71;
+
+  font-size: 0.84rem;
+  font-weight: 500;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   FEATURE THE FIRST CARD
+   Martin D. Jenkins Full-Ride Scholarship
+========================================================= */
+
+
+
+/* =========================================================
+   MEDIUM DESKTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .awards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .award-card {
+    min-height: 330px;
+
+    padding: 2.2rem;
+  }
+
+  .award-card h3 {
+    font-size: clamp(1.9rem, 2.7vw, 2.4rem);
+  }
+
+  .award-card > p {
+    font-size: 0.96rem;
+  }
+
+  .award-highlight {
+    font-size: 0.86rem;
+  }
+
+  .award-card small {
+    font-size: 0.8rem;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .awards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .award-card {
+    min-height: 300px;
+
+    padding: 1.8rem;
+  }
+
+  .award-topline {
+    margin-bottom: 1.6rem;
+  }
+
+  .award-topline span {
+    font-size: 0.76rem;
+  }
+
+  .award-topline b {
+    font-size: 0.62rem;
+  }
+
+  .award-card h3 {
+    font-size: 1.9rem;
+  }
+
+  .award-card > p {
+    margin-top: 0.75rem;
+
+    font-size: 0.92rem;
+  }
+
+  .award-highlight {
+    margin-top: 1.3rem;
+
+    padding: 0.65rem 0.8rem;
+
+    font-size: 0.8rem;
+  }
+
+  .award-card small {
+    font-size: 0.76rem;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 580px) {
+
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .award-card {
+    min-height: 280px;
+
+    padding: 1.8rem;
+  }
+
+  .award-topline {
+    margin-bottom: 1.5rem;
+  }
+
+  .award-topline span {
+    font-size: 0.76rem;
+  }
+
+  .award-topline b {
+    font-size: 0.62rem;
+  }
+
+  .award-card h3 {
+    font-size: 2rem;
+
+    line-height: 1.08;
+  }
+
+  .award-card > p {
+    font-size: 0.94rem;
+  }
+
+  .award-highlight {
+    font-size: 0.82rem;
+  }
+
+  .award-card small {
+    font-size: 0.78rem;
+  }
+}
+/* =========================================================
+   SELECTED OPPORTUNITIES — FINAL ENLARGED VERSION
+   Keep this at the VERY BOTTOM of the CSS file.
+========================================================= */
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.programs-section {
+  padding-top: 2rem;
+  padding-bottom: 10rem;
+
+  background: var(--cream);
+}
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.programs-grid {
+  display: grid;
+
+  /*
+    Two cards per row instead of three.
+    This gives the content significantly more room.
+  */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 1.5rem;
+}
+
+/* =========================================================
+   INDIVIDUAL CARD
+========================================================= */
+
+.program-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 390px;
+
+  padding: clamp(2.2rem, 3vw, 3rem);
+
+  overflow: hidden;
+
+  border: 1px solid var(--line);
+
+  background: var(--paper);
+
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease,
+    border-color 250ms ease;
+}
+
+/* Subtle gold line */
+
+.program-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 3px;
+
+  background: var(--gold);
+
+  transition: width 350ms ease;
+}
+
+/* Hover */
+
+.program-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(178, 138, 74, 0.45);
+
+  box-shadow: 0 22px 55px rgba(54, 45, 34, 0.08);
+}
+
+.program-card:hover::before {
+  width: 100%;
+}
+
+/* =========================================================
+   STANDOUT CARDS
+========================================================= */
+
+.program-card.program-standout {
+  border-color: rgba(178, 138, 74, 0.45);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(178, 138, 74, 0.09),
+      rgba(255, 253, 249, 0.96) 58%
+    );
+}
+
+.program-card.program-standout::before {
+  width: 100%;
+}
+
+/* =========================================================
+   TOP ROW
+========================================================= */
+
+.program-top {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 1.5rem;
+
+  margin-bottom: 2.3rem;
+}
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.program-top span {
+  color: var(--gold);
+
+  font-size: 0.84rem;
+  font-weight: 700;
+
+  letter-spacing: 0.11em;
+  line-height: 1.5;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   SELECTION BADGE
+   Replaces the old black box
+========================================================= */
+
+.program-top b {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  max-width: 60%;
+
+  padding: 0.65rem 0.9rem;
+
+  border: 1px solid rgba(178, 138, 74, 0.38);
+
+  background: #efe4d0;
+
+  color: #6d542b;
+
+  font-size: 0.74rem;
+  font-weight: 700;
+
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+
+  text-align: right;
+}
+
+/* =========================================================
+   OPPORTUNITY TITLE
+========================================================= */
+
+.program-card h3 {
+  margin: 0;
+
+  color: var(--brown);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(2.15rem, 2.8vw, 3rem);
+  font-weight: 500;
+
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+}
+
+/* =========================================================
+   ORGANIZATION / ROLE
+========================================================= */
+
+.program-org {
+  margin: 1rem 0 0;
+
+  color: #5d554c;
+
+  font-size: 1.05rem;
+  font-weight: 700;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.program-card > p:last-child {
+  max-width: 680px;
+
+  margin: 1.6rem 0 0;
+
+  color: #6d645a;
+
+  font-size: 1.08rem;
+  font-weight: 400;
+
+  line-height: 1.85;
+}
+
+/* =========================================================
+   MEDIUM DESKTOP / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .programs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 1.25rem;
+  }
+
+  .program-card {
+    min-height: 370px;
+
+    padding: 2.3rem;
+  }
+
+  .program-top {
+    margin-bottom: 2rem;
+  }
+
+  .program-top span {
+    font-size: 0.78rem;
+  }
+
+  .program-top b {
+    max-width: 58%;
+
+    font-size: 0.7rem;
+  }
+
+  .program-card h3 {
+    font-size: clamp(2rem, 3vw, 2.6rem);
+  }
+
+  .program-org {
+    font-size: 1rem;
+  }
+
+  .program-card > p:last-child {
+    font-size: 1.02rem;
+
+    line-height: 1.8;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .programs-section {
+    padding-bottom: 7rem;
+  }
+
+  .programs-grid {
+    grid-template-columns: 1fr;
+
+    gap: 1.2rem;
+  }
+
+  .program-card {
+    min-height: auto;
+
+    padding: 2rem;
+  }
+
+  .program-top {
+    margin-bottom: 1.8rem;
+  }
+
+  .program-top span {
+    font-size: 0.76rem;
+  }
+
+  .program-top b {
+    max-width: 55%;
+
+    padding: 0.55rem 0.75rem;
+
+    font-size: 0.68rem;
+  }
+
+  .program-card h3 {
+    font-size: 2.2rem;
+
+    line-height: 1.08;
+  }
+
+  .program-org {
+    margin-top: 0.8rem;
+
+    font-size: 0.98rem;
+  }
+
+  .program-card > p:last-child {
+    margin-top: 1.3rem;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 580px) {
+
+  .programs-section {
+    padding-bottom: 6rem;
+  }
+
+  .program-card {
+    padding: 1.7rem;
+  }
+
+  .program-top {
+    flex-direction: column;
+
+    gap: 0.8rem;
+
+    margin-bottom: 1.6rem;
+  }
+
+  .program-top span {
+    font-size: 0.74rem;
+  }
+
+  .program-top b {
+    max-width: 100%;
+
+    padding: 0.55rem 0.7rem;
+
+    font-size: 0.66rem;
+
+    text-align: left;
+  }
+
+  .program-card h3 {
+    font-size: 2rem;
+
+    line-height: 1.08;
+  }
+
+  .program-org {
+    margin-top: 0.75rem;
+
+    font-size: 0.94rem;
+  }
+
+  .program-card > p:last-child {
+    margin-top: 1.2rem;
+
+    font-size: 0.98rem;
+
+    line-height: 1.78;
+  }
+}
+/* =========================================================
+   SELECTED OPPORTUNITIES — STACKED DISCOVERY EXPERIENCE
+   KEEP AT VERY BOTTOM OF CSS FILE
+========================================================= */
+
+.programs-section {
+  position: relative;
+  padding-top: 8rem;
+  padding-bottom: 10rem;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+
+/* =========================================================
+   MAIN OPPORTUNITY GRID
+========================================================= */
+
+.programs-main-grid,
+.program-reveal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.35rem;
+}
+
+.programs-section .program-card {
+  position: relative;
+
+  min-height: 360px;
+  padding: 2rem;
+
+  border: 1px solid var(--line);
+
+  background: var(--paper);
+
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.programs-section .program-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(178, 138, 74, 0.5);
+
+  box-shadow:
+    0 22px 55px rgba(44, 40, 35, 0.08);
+}
+
+.programs-section .program-card.program-standout {
+  border-color: #c9aa72;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f8f0e3 0%,
+      #fffaf2 100%
+    );
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.programs-section .program-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 1rem;
+}
+
+.programs-section .program-top span {
+  color: var(--gold);
+
+  font-size: 0.76rem;
+  font-weight: 700;
+
+  letter-spacing: 0.11em;
+}
+
+.programs-section .program-top b {
+  max-width: 58%;
+
+  padding: 0;
+
+  background: transparent;
+
+  color: #796445;
+
+  font-size: 0.68rem;
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+  line-height: 1.45;
+
+  text-align: right;
+}
+
+
+/* =========================================================
+   CARD TYPOGRAPHY
+========================================================= */
+
+.programs-section .program-card h3 {
+  margin: 2.4rem 0 0.75rem;
+
+  color: var(--brown);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(1.8rem, 2vw, 2.25rem);
+  font-weight: 500;
+
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.programs-section .program-org {
+  margin: 0;
+
+  color: #5d554c;
+
+  font-size: 0.92rem;
+  font-weight: 700;
+
+  line-height: 1.55;
+}
+
+.programs-section .program-detail {
+  margin: 1.35rem 0 0;
+
+  color: #766d63;
+
+  font-size: 0.96rem;
+
+  line-height: 1.78;
+}
+
+
+/* =========================================================
+   DISCOVERY AREA
+========================================================= */
+
+.program-discovery {
+  position: relative;
+
+  max-width: 1050px;
+
+  margin: 6rem auto 0;
+
+  padding-top: 2rem;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   STACK
+========================================================= */
+
+.program-stack {
+  position: relative;
+
+  width: min(760px, 92%);
+
+  height: 310px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   PREVIEW CARDS
+========================================================= */
+
+.program-preview-card {
+  position: absolute;
+  left: 50%;
+
+  display: block;
+
+  width: 100%;
+  min-height: 185px;
+
+  padding: 1.6rem 2rem;
+
+  border: 1px solid #d4c8b7;
+
+  background: var(--paper);
+
+  color: var(--brown);
+
+  text-align: left;
+
+  box-shadow:
+    0 18px 45px rgba(44, 40, 35, 0.08);
+
+  cursor: pointer;
+
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+
+/* BACK CARD */
+
+.program-preview-1 {
+  top: 0;
+
+  z-index: 1;
+
+  transform:
+    translateX(-50%)
+    scale(0.90);
+
+  opacity: 0.65;
+}
+
+
+/* MIDDLE CARD */
+
+.program-preview-2 {
+  top: 48px;
+
+  z-index: 2;
+
+  transform:
+    translateX(-50%)
+    scale(0.95);
+
+  opacity: 0.82;
+}
+
+
+/* FRONT CARD */
+
+.program-preview-3 {
+  top: 96px;
+
+  z-index: 3;
+
+  transform:
+    translateX(-50%)
+    scale(1);
+
+  opacity: 1;
+
+  border-color: #c5ad83;
+}
+
+
+/* HOVER STACK */
+
+.program-stack:hover .program-preview-1 {
+  transform:
+    translateX(-50%)
+    translateY(-12px)
+    scale(0.90);
+}
+
+.program-stack:hover .program-preview-2 {
+  transform:
+    translateX(-50%)
+    translateY(-4px)
+    scale(0.95);
+}
+
+.program-stack:hover .program-preview-3 {
+  transform:
+    translateX(-50%)
+    translateY(5px)
+    scale(1);
+}
+
+.program-preview-card:hover {
+  border-color: var(--gold);
+
+  box-shadow:
+    0 24px 60px rgba(44, 40, 35, 0.12);
+}
+
+
+/* =========================================================
+   PREVIEW CARD CONTENT
+========================================================= */
+
+.program-preview-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.program-preview-top > span:first-child {
+  color: var(--gold);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+.program-preview-number {
+  color: #b7aa99;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 0.95rem;
+}
+
+.program-preview-content h3 {
+  margin: 1.1rem 0 0;
+
+  color: var(--brown);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 1.75rem;
+  font-weight: 500;
+
+  letter-spacing: -0.03em;
+}
+
+.program-preview-content p {
+  margin: 0.5rem 0 0;
+
+  color: #847768;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   +1 CARD
+========================================================= */
+
+.program-stack-more {
+  position: absolute;
+
+  right: -18px;
+  bottom: 6px;
+
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 82px;
+  height: 82px;
+
+  border: 1px solid #b9965c;
+  border-radius: 50%;
+
+  background: var(--brown);
+
+  color: #f8f1e6;
+
+  box-shadow:
+    0 12px 30px rgba(44, 40, 35, 0.16);
+
+  cursor: pointer;
+
+  transition:
+    transform 200ms ease,
+    background 200ms ease;
+}
+
+.program-stack-more:hover {
+  transform: translateY(-4px) scale(1.04);
+
+  background: #1f1b17;
+}
+
+.program-stack-more > span {
+  color: var(--gold-light);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 1.8rem;
+
+  line-height: 1;
+}
+
+.program-stack-more small {
+  margin-top: 0.2rem;
+
+  color: #ddd1c0;
+
+  font-size: 0.52rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   DISCOVERY COPY
+========================================================= */
+
+.program-discovery-copy {
+  max-width: 620px;
+
+  margin: 1.4rem auto 0;
+
+  text-align: center;
+}
+
+.program-discovery-eyebrow {
+  display: block;
+
+  margin-bottom: 0.8rem;
+
+  color: var(--gold);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.program-discovery-copy h3 {
+  margin: 0;
+
+  color: var(--brown);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 500;
+
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.program-discovery-copy > p {
+  margin: 1rem auto 0;
+
+  color: #786f65;
+
+  font-size: 0.95rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   MAIN EXPLORE BUTTON
+========================================================= */
+
+.program-explore-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  min-width: 310px;
+  min-height: 62px;
+
+  margin-top: 1.8rem;
+
+  padding: 0.75rem 0.85rem 0.75rem 1.5rem;
+
+  border: 1px solid var(--brown);
+
+  background: var(--brown);
+
+  color: #fffaf2;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+
+  cursor: pointer;
+
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.program-explore-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 35px rgba(44, 40, 35, 0.18);
+}
+
+.program-explore-arrow {
+  display: grid;
+
+  width: 40px;
+  height: 40px;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #f6eee2;
+
+  color: var(--brown);
+}
+
+
+/* =========================================================
+   EXPANDED AREA
+========================================================= */
+
+.program-expanded-area {
+  margin-top: 5.5rem;
+
+  animation: programReveal 450ms ease both;
+}
+
+@keyframes programReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   EXPANDED HEADING
+========================================================= */
+
+.program-expanded-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 4rem;
+
+  margin-bottom: 2.5rem;
+
+  padding-top: 2rem;
+
+  border-top: 1px solid var(--line);
+}
+
+.program-expanded-heading span {
+  color: var(--gold);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+}
+
+.program-expanded-heading h3 {
+  max-width: 600px;
+
+  margin: 0.8rem 0 0;
+
+  color: var(--brown);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(2rem, 3.5vw, 3.3rem);
+  font-weight: 500;
+
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.program-expanded-heading > p {
+  max-width: 400px;
+
+  margin: 0;
+
+  color: #776e64;
+
+  font-size: 0.9rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   COLLAPSE BUTTON
+========================================================= */
+
+.program-collapse-wrap {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 3rem;
+}
+
+.program-collapse-button {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.8rem;
+
+  padding: 0.9rem 1.3rem;
+
+  border: 1px solid #b9aa97;
+
+  background: transparent;
+
+  color: var(--brown);
+
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.program-collapse-arrow {
+  display: inline-flex;
+
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .programs-main-grid,
+  .program-reveal-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .programs-section .program-card {
+    min-height: 350px;
+  }
+
+  .program-expanded-heading {
+    display: block;
+  }
+
+  .program-expanded-heading > p {
+    margin-top: 1.2rem;
+  }
+
+  .program-stack {
+    width: 90%;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 580px) {
+
+  .programs-section {
+    padding-top: 6rem;
+    padding-bottom: 7rem;
+  }
+
+  .programs-main-grid,
+  .program-reveal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .programs-section .program-card {
+    min-height: auto;
+
+    padding: 1.6rem;
+  }
+
+  .programs-section .program-card h3 {
+    margin-top: 1.8rem;
+
+    font-size: 1.8rem;
+  }
+
+  .programs-section .program-detail {
+    font-size: 0.92rem;
+  }
+
+  .program-discovery {
+    margin-top: 4rem;
+  }
+
+  .program-stack {
+    width: 96%;
+    height: 285px;
+  }
+
+  .program-preview-card {
+    min-height: 165px;
+
+    padding: 1.3rem 1.4rem;
+  }
+
+  .program-preview-content h3 {
+    font-size: 1.4rem;
+  }
+
+  .program-preview-1 {
+    top: 0;
+  }
+
+  .program-preview-2 {
+    top: 42px;
+  }
+
+  .program-preview-3 {
+    top: 84px;
+  }
+
+  .program-stack-more {
+    right: -4px;
+    bottom: 12px;
+
+    width: 68px;
+    height: 68px;
+  }
+
+  .program-discovery-copy {
+    margin-top: 1rem;
+  }
+
+  .program-discovery-copy h3 {
+    font-size: 2.4rem;
+  }
+
+  .program-explore-button {
+    width: 100%;
+    min-width: 0;
+
+    margin-top: 1.5rem;
+  }
+
+  .program-expanded-heading {
+    gap: 1rem;
+  }
+
+  .program-expanded-heading h3 {
+    font-size: 2.25rem;
+  }
+}
+
+/* =========================================================
+   EXPERIENCE — SUBTLE CAREER TIMELINE
+   ADD TO VERY BOTTOM OF index.css
+
+   This does NOT change:
+   - existing grid
+   - logo sizes
+   - font sizes
+   - row heights
+   - section spacing
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. PREPARE EACH EXPERIENCE ROW
+--------------------------------------------------------- */
+
+.experience-item {
+  position: relative;
+}
+
+
+/* ---------------------------------------------------------
+   2. TIMELINE LINE
+
+   Creates a thin gold line beside the experience entries.
+--------------------------------------------------------- */
+
+.experience-item::before {
+  content: "";
+
+  position: absolute;
+
+  left: 190px;
+  top: 0;
+  bottom: 0;
+
+  width: 1px;
+
+  background: rgba(178, 138, 74, 0.32);
+
+  z-index: 1;
+}
+
+
+/* ---------------------------------------------------------
+   3. TIMELINE NODE
+
+   Small circle representing each career milestone.
+--------------------------------------------------------- */
+
+.experience-item::after {
+  content: "";
+
+  position: absolute;
+
+  left: 185px;
+  top: 50%;
+
+  width: 11px;
+  height: 11px;
+
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+
+  background: var(--paper);
+
+  transform: translateY(-50%);
+
+  z-index: 3;
+
+  transition:
+    background-color 250ms ease,
+    transform 250ms ease,
+    box-shadow 250ms ease;
+}
+
+
+/* ---------------------------------------------------------
+   4. NODE HOVER
+
+   The timeline point fills when the user interacts with
+   an experience.
+--------------------------------------------------------- */
+
+.experience-item:hover::after {
+  background: var(--gold);
+
+  transform:
+    translateY(-50%)
+    scale(1.35);
+
+  box-shadow:
+    0 0 0 6px rgba(178, 138, 74, 0.12);
+}
+
+
+/* ---------------------------------------------------------
+   5. EXPERIENCE ROW MICRO-INTERACTION
+--------------------------------------------------------- */
+
+.experience-item {
+  transition:
+    background-color 250ms ease;
+}
+
+.experience-item:hover {
+  background: rgba(178, 138, 74, 0.025);
+}
+
+
+/* ---------------------------------------------------------
+   6. LOGO MICRO-INTERACTION
+--------------------------------------------------------- */
+
+.brand-mark {
+  position: relative;
+  z-index: 2;
+
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.experience-item:hover .brand-mark {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 30px rgba(44, 40, 35, 0.07);
+}
+
+
+/* ---------------------------------------------------------
+   7. JOB TITLE MICRO-INTERACTION
+--------------------------------------------------------- */
+
+.experience-main h3 {
+  transition:
+    color 250ms ease;
+}
+
+.experience-item:hover .experience-main h3 {
+  color: #96703c;
+}
+
+
+/* ---------------------------------------------------------
+   8. ARROW MICRO-INTERACTION
+--------------------------------------------------------- */
+
+.experience-arrow {
+  transition:
+    color 250ms ease,
+    transform 250ms ease;
+}
+
+.experience-item:hover .experience-arrow {
+  color: var(--gold);
+
+  transform: translate(4px, -4px) scale(1.2);
+}
+
+
+/* =========================================================
+   TABLET
+
+   Hide timeline instead of allowing it to interfere with
+   the compressed tablet layout.
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .experience-item::before,
+  .experience-item::after {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .experience-item::after,
+  .brand-mark,
+  .experience-main h3,
+  .experience-arrow {
+    transition: none;
+  }
+
+  .experience-item:hover::after,
+  .experience-item:hover .brand-mark,
+  .experience-item:hover .experience-arrow {
+    transform: none;
+  }
+
+}
+
+/* =========================================================
+   LEADERSHIP — EDITORIAL SPOTLIGHT
+   Visual interaction only.
+   Does not change the existing layout or sizing.
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   LEADERSHIP PHOTO
+--------------------------------------------------------- */
+
+.leadership-photo {
+  overflow: hidden;
+}
+
+.leadership-photo img {
+  transition:
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 600ms ease;
+}
+
+/* Very subtle cinematic movement */
+.leadership-section:hover .leadership-photo img {
+  transform: scale(1.025);
+  filter: saturate(0.9);
+}
+
+
+/* ---------------------------------------------------------
+   LEADERSHIP ROW
+--------------------------------------------------------- */
+
+.leadership-item {
+  position: relative;
+
+  transition:
+    background-color 300ms ease,
+    padding-left 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* ---------------------------------------------------------
+   GOLD ACCENT
+--------------------------------------------------------- */
+
+.leadership-item::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 50%;
+
+  width: 2px;
+  height: 0;
+
+  background: #c4a56d;
+
+  transform: translateY(-50%);
+
+  transition:
+    height 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* Grow accent when hovering over an entry */
+.leadership-item:hover::before {
+  height: 62%;
+}
+
+
+/* ---------------------------------------------------------
+   ROW SPOTLIGHT
+--------------------------------------------------------- */
+
+.leadership-item:hover {
+  padding-left: 1.15rem;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(196, 165, 109, 0.08),
+      rgba(196, 165, 109, 0.025) 45%,
+      transparent 80%
+    );
+}
+
+
+/* ---------------------------------------------------------
+   DATE
+--------------------------------------------------------- */
+
+.leadership-date {
+  transition:
+    color 250ms ease,
+    letter-spacing 250ms ease;
+}
+
+.leadership-item:hover .leadership-date {
+  color: #e1bf7e;
+
+  letter-spacing: 0.16em;
+}
+
+
+/* ---------------------------------------------------------
+   ROLE TITLE
+--------------------------------------------------------- */
+
+.leadership-item h3 {
+  transition:
+    color 280ms ease,
+    transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.leadership-item:hover h3 {
+  color: #ffffff;
+
+  transform: translateX(5px);
+}
+
+
+/* ---------------------------------------------------------
+   ORGANIZATION
+--------------------------------------------------------- */
+
+.leadership-org {
+  transition:
+    color 280ms ease,
+    transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.leadership-item:hover .leadership-org {
+  color: #d7c9b8;
+
+  transform: translateX(5px);
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPTION
+--------------------------------------------------------- */
+
+.leadership-item > p {
+  transition:
+    color 280ms ease,
+    transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.leadership-item:hover > p {
+  color: #eee4d7;
+
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   MOBILE / TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  /* Avoid layout shifting on touch devices */
+  .leadership-item:hover {
+    padding-left: 0;
+
+    background: transparent;
+  }
+
+  .leadership-item:hover::before {
+    height: 0;
+  }
+
+  .leadership-item:hover h3,
+  .leadership-item:hover .leadership-org,
+  .leadership-item:hover > p {
+    transform: none;
+  }
+
+  .leadership-section:hover .leadership-photo img {
+    transform: none;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .leadership-photo img,
+  .leadership-item,
+  .leadership-item::before,
+  .leadership-date,
+  .leadership-item h3,
+  .leadership-org,
+  .leadership-item > p {
+    transition: none;
+  }
+
+  .leadership-section:hover .leadership-photo img,
+  .leadership-item:hover h3,
+  .leadership-item:hover .leadership-org,
+  .leadership-item:hover > p {
+    transform: none;
+  }
+
+}
+/* =========================================================
+   AWARDS & HONORS — FINAL RECOGNITION GALLERY
+   Replace the previous Awards & Honors CSS block with this.
+========================================================= */
+
+
+/* =========================================================
+   AWARDS GRID
+========================================================= */
+
+.recognition-section .awards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 1.35rem;
+
+  border: none;
+  overflow: visible;
+}
+
+
+/* =========================================================
+   AWARD CARD
+========================================================= */
+
+.recognition-section .award-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 360px;
+
+  padding: 2.15rem;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(44, 40, 35, 0.13);
+
+  /*
+    Every award uses the SAME background.
+    No special treatment for Jenkins/full-ride.
+  */
+  background: var(--paper);
+
+  transition:
+    transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 350ms ease,
+    border-color 350ms ease,
+    opacity 300ms ease;
+}
+
+
+/* =========================================================
+   SUBTLE GOLD TOP ACCENT
+========================================================= */
+
+.recognition-section .award-card {
+  background-image:
+    linear-gradient(
+      90deg,
+      var(--gold),
+      var(--gold)
+    );
+
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 0 3px;
+
+  transition:
+    transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 350ms ease,
+    border-color 350ms ease,
+    background-size 450ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 300ms ease;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.recognition-section .award-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(178, 138, 74, 0.42);
+
+  background-size: 100% 3px;
+
+  box-shadow:
+    0 22px 50px rgba(54, 45, 34, 0.09);
+}
+
+
+/* =========================================================
+   SUBTLE GOLD CORNER
+========================================================= */
+
+.recognition-section .award-card::after {
+  content: "";
+
+  position: absolute;
+
+  right: 1.3rem;
+  bottom: 1.3rem;
+
+  width: 0;
+  height: 0;
+
+  border-right: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    width 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    height 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 250ms ease;
+}
+
+
+.recognition-section .award-card:hover::after {
+  width: 27px;
+  height: 27px;
+
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   SOFTEN NEIGHBORING CARDS
+========================================================= */
+
+.recognition-section .awards-grid:has(.award-card:hover)
+.award-card:not(:hover) {
+  opacity: 0.82;
+}
+
+
+/* =========================================================
+   TOP ROW — YEAR + HONOR
+========================================================= */
+
+.recognition-section .award-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  margin-bottom: 2.5rem;
+}
+
+
+/* YEAR */
+
+.recognition-section .award-topline span {
+  color: var(--gold);
+
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+  line-height: 1.4;
+}
+
+
+/* HONOR */
+
+.recognition-section .award-topline b {
+  padding: 0.55rem 0.75rem;
+
+  border: 1px solid rgba(178, 138, 74, 0.28);
+
+  color: #8b7654;
+
+  font-size: 0.66rem;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+  line-height: 1;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   AWARD TITLE
+========================================================= */
+
+.recognition-section .award-card h3 {
+  max-width: 94%;
+
+  margin: 0;
+
+  color: var(--brown);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(2rem, 2.5vw, 2.65rem);
+  font-weight: 500;
+
+  letter-spacing: -0.04em;
+  line-height: 1.04;
+
+  transition:
+    transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 300ms ease;
+}
+
+
+.recognition-section .award-card:hover h3 {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   ORGANIZATION
+========================================================= */
+
+.recognition-section .award-card > p {
+  max-width: 94%;
+
+  margin: 0.9rem 0 0;
+
+  color: #625a51;
+
+  font-size: 0.92rem;
+  font-weight: 700;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   AWARD HIGHLIGHT
+========================================================= */
+
+.recognition-section .award-highlight {
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content;
+  max-width: 94%;
+
+  margin: 1.5rem 0 0;
+
+  padding: 0.7rem 0.95rem;
+
+  border-left: 3px solid var(--gold);
+
+  background: rgba(178, 138, 74, 0.08);
+
+  color: var(--brown);
+
+  font-size: 0.76rem;
+  font-weight: 700;
+
+  letter-spacing: 0.035em;
+  line-height: 1.45;
+
+  text-transform: uppercase;
+
+  transition:
+    background-color 300ms ease,
+    transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.recognition-section .award-card:hover .award-highlight {
+  background: rgba(178, 138, 74, 0.12);
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   REMOVE OLD MINI DESCRIPTION
+========================================================= */
+
+.recognition-section .award-card small {
+  display: none;
+}
+
+
+/* =========================================================
+   VIEW RECOGNITION
+========================================================= */
+
+/*
+   margin-top: auto is important.
+
+   It pushes the action to the BOTTOM of the card instead of
+   allowing it to float directly beneath the highlight.
+*/
+
+.recognition-section .award-artifact-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  margin-top: auto;
+
+  padding: 1.25rem 0 0;
+
+  border: 0;
+  border-top: 1px solid rgba(77, 66, 54, 0.16);
+
+  background: transparent;
+
+  color: var(--brown);
+
+  font-family: inherit;
+
+  font-size: 0.7rem;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+  line-height: 1;
+
+  text-align: left;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    color 250ms ease,
+    border-color 250ms ease;
+}
+
+
+.recognition-section .award-artifact-button span {
+  display: block;
+
+  white-space: nowrap;
+}
+
+
+.recognition-section .award-artifact-button svg {
+  flex-shrink: 0;
+
+  width: 16px;
+  height: 16px;
+
+  margin-left: 1rem;
+
+  transition:
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.recognition-section .award-artifact-button:hover {
+  color: var(--gold);
+
+  border-color: rgba(178, 138, 74, 0.5);
+}
+
+
+.recognition-section .award-artifact-button:hover svg {
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .recognition-section .awards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+
+  .recognition-section .award-card {
+    min-height: 340px;
+
+    padding: 1.9rem;
+  }
+
+
+  .recognition-section .award-card h3 {
+    font-size: clamp(1.9rem, 3.2vw, 2.45rem);
+  }
+
+
+  .recognition-section .award-topline {
+    margin-bottom: 2.2rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .recognition-section .awards-grid {
+    grid-template-columns: 1fr;
+
+    gap: 1rem;
+  }
+
+
+  .recognition-section .award-card {
+    min-height: 310px;
+
+    padding: 1.6rem;
+  }
+
+
+  .recognition-section .award-topline {
+    margin-bottom: 2rem;
+  }
+
+
+  .recognition-section .award-card h3 {
+    max-width: 96%;
+
+    font-size: 2rem;
+  }
+
+
+  .recognition-section .award-card > p {
+    max-width: 96%;
+
+    font-size: 0.9rem;
+  }
+
+
+  .recognition-section .award-highlight {
+    max-width: 96%;
+
+    font-size: 0.72rem;
+  }
+
+
+  .recognition-section .award-artifact-button {
+    padding-top: 1.1rem;
+
+    font-size: 0.67rem;
+  }
+
+
+  /*
+     Don't fade surrounding cards on touch-sized screens.
+  */
+
+  .recognition-section .awards-grid:has(.award-card:hover)
+  .award-card:not(:hover) {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .recognition-section .award-card,
+  .recognition-section .award-card::after,
+  .recognition-section .award-card h3,
+  .recognition-section .award-highlight,
+  .recognition-section .award-artifact-button,
+  .recognition-section .award-artifact-button svg {
+    transition: none;
+  }
+
+
+  .recognition-section .award-card:hover,
+  .recognition-section .award-card:hover h3,
+  .recognition-section .award-card:hover .award-highlight,
+  .recognition-section .award-artifact-button:hover svg {
+    transform: none;
+  }
+}
+
+
+/* =========================================================
+   AWARD ARTIFACT LIGHTBOX
+========================================================= */
+
+.award-lightbox {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: clamp(1rem, 4vw, 3rem);
+
+  background: rgba(24, 20, 16, 0.82);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  animation: awardFadeIn 250ms ease;
+}
+
+
+/* =========================================================
+   LIGHTBOX WINDOW
+========================================================= */
+
+.award-lightbox-inner {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(280px, 0.6fr);
+
+  width: min(1180px, 100%);
+
+  max-height: 88vh;
+
+  overflow: hidden;
+
+  background: var(--paper);
+
+  box-shadow:
+    0 35px 100px rgba(0, 0, 0, 0.35);
+
+  animation:
+    awardModalIn 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================================
+   LIGHTBOX ARTIFACT
+========================================================= */
+
+.award-lightbox-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 560px;
+
+  padding: 2rem;
+
+  overflow: auto;
+
+  background: #eee9e0;
+}
+
+
+.award-lightbox-media img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  max-height: 78vh;
+
+  object-fit: contain;
+
+  box-shadow:
+    0 15px 45px rgba(39, 32, 25, 0.14);
+}
+
+
+/* =========================================================
+   LIGHTBOX CAPTION
+========================================================= */
+
+.award-lightbox-caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  gap: 3rem;
+
+  padding: 4rem 2.5rem 2.5rem;
+}
+
+
+.award-lightbox-caption span {
+  display: block;
+
+  margin-bottom: 1.2rem;
+
+  color: var(--gold);
+
+  font-size: 0.7rem;
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+}
+
+
+.award-lightbox-caption h3 {
+  margin: 0;
+
+  color: var(--brown);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 500;
+
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+
+.award-lightbox-caption p {
+  margin: 1rem 0 0;
+
+  color: #6b635a;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  line-height: 1.6;
+}
+
+
+.award-lightbox-highlight {
+  padding-top: 1.5rem;
+
+  border-top: 1px solid var(--line);
+
+  color: var(--brown);
+
+  font-size: 0.8rem;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   LIGHTBOX CLOSE BUTTON
+========================================================= */
+
+.award-lightbox-close {
+  position: absolute;
+
+  top: 1.2rem;
+  right: 1.2rem;
+
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  border: 1px solid rgba(63, 52, 42, 0.14);
+
+  border-radius: 50%;
+
+  background: var(--paper);
+
+  color: var(--brown);
+
+  cursor: pointer;
+
+  transition:
+    transform 250ms ease,
+    background-color 250ms ease;
+}
+
+
+.award-lightbox-close:hover {
+  transform: rotate(90deg);
+
+  background: #f0e9de;
+}
+
+
+/* =========================================================
+   LIGHTBOX ANIMATION
+========================================================= */
+
+@keyframes awardFadeIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes awardModalIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(24px)
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* =========================================================
+   LIGHTBOX TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .award-lightbox {
+    align-items: flex-start;
+
+    overflow-y: auto;
+
+    padding: 1rem;
+  }
+
+
+  .award-lightbox-inner {
+    grid-template-columns: 1fr;
+
+    max-height: none;
+
+    margin: auto 0;
+  }
+
+
+  .award-lightbox-media {
+    min-height: auto;
+
+    padding: 1rem;
+  }
+
+
+  .award-lightbox-media img {
+    max-height: 65vh;
+  }
+
+
+  .award-lightbox-caption {
+    padding: 2rem 1.5rem;
+
+    gap: 2rem;
+  }
+
+
+  .award-lightbox-caption h3 {
+    font-size: 2rem;
+  }
+}
+
+
+/* =========================================================
+   LIGHTBOX REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .award-lightbox,
+  .award-lightbox-inner {
+    animation: none;
+  }
+
+
+  .award-lightbox-close {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   SELECTED WORK — MORE WORK REVEAL
+========================================================= */
+
+
+/* =========================================================
+   TEASER CONTAINER
+========================================================= */
+
+.more-work-teaser {
+  position: relative;
+
+  margin-top: 5.5rem;
+  padding-top: 3rem;
+
+  border-top: 1px solid var(--line);
+}
+
+
+/* =========================================================
+   TEASER HEADING
+========================================================= */
+.more-work-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  margin-bottom: 2.5rem;
+}
+
+.more-work-heading > span {
+  color: var(--gold);
+
+  font-size: 0.78rem;
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+}
+
+.more-work-heading p {
+  max-width: 520px;
+
+  margin: 0;
+
+  color: #6b6258;
+
+  font-size: 1.08rem;
+  font-weight: 500;
+
+  line-height: 1.65;
+}
+
+/* =========================================================
+   THREE PROJECT PREVIEWS
+========================================================= */
+
+.more-work-preview-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 1rem;
+
+  position: relative;
+}
+
+
+.more-work-preview {
+  appearance: none;
+
+  display: block;
+
+  min-width: 0;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.more-work-preview:hover {
+  transform: translateY(-6px);
+}
+
+
+/* =========================================================
+   PREVIEW IMAGE
+========================================================= */
+
+.more-work-preview-image {
+  position: relative;
+
+  height: clamp(170px, 18vw, 245px);
+
+  overflow: hidden;
+
+  background: #eee9e0;
+}
+
+
+.more-work-preview-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 400ms ease;
+}
+
+
+.more-work-preview:hover
+.more-work-preview-image img {
+  transform: scale(1.035);
+}
+
+
+/* =========================================================
+   IMAGE FADE
+========================================================= */
+
+.more-work-preview-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(38, 31, 25, 0) 35%,
+      rgba(38, 31, 25, 0.08) 65%,
+      rgba(38, 31, 25, 0.42) 100%
+    );
+}
+
+
+/* =========================================================
+   PROJECT NUMBER
+========================================================= */
+
+.more-work-preview-number {
+  position: absolute;
+
+  top: 1rem;
+  left: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 38px;
+  height: 30px;
+
+  padding: 0 0.55rem;
+
+  background: rgba(250, 247, 241, 0.92);
+
+  color: var(--brown);
+
+  font-size: 0.66rem;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+  backdrop-filter: blur(8px);
+}
+
+
+/* =========================================================
+   PREVIEW TITLE
+========================================================= */
+.more-work-preview-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 0.75rem;
+
+  padding: 1.25rem 0.15rem 0;
+}
+
+.more-work-preview-info > span {
+  color: var(--brown);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(1.55rem, 1.8vw, 1.9rem);
+  font-weight: 500;
+
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+
+  white-space: nowrap;
+}
+
+
+.more-work-preview-info svg {
+  flex-shrink: 0;
+
+  width: 17px;
+  height: 17px;
+
+  color: #9d9285;
+
+  transition:
+    color 300ms ease,
+    transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.more-work-preview:hover
+.more-work-preview-info svg {
+  color: var(--gold);
+
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   EXPLORE MORE BUTTON
+========================================================= */
+
+.more-work-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: fit-content;
+
+  margin: 3.5rem auto 0;
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--brown);
+
+  cursor: pointer;
+}
+
+
+.more-work-toggle-small {
+  margin-bottom: 0.65rem;
+
+  color: var(--gold);
+
+  font-size: 0.62rem;
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+}
+
+
+.more-work-toggle strong {
+  position: relative;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(1.65rem, 2.2vw, 2.2rem);
+  font-weight: 500;
+
+  letter-spacing: -0.035em;
+}
+
+
+.more-work-toggle strong::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -0.45rem;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--gold);
+
+  transform: translateX(-50%);
+
+  transition:
+    width 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.more-work-toggle:hover strong::after {
+  width: 100%;
+}
+
+
+.more-work-toggle-arrow {
+  margin-top: 1.1rem;
+
+  color: var(--gold);
+
+  font-size: 1.2rem;
+
+  transition:
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.more-work-toggle:hover
+.more-work-toggle-arrow {
+  transform: translateY(5px);
+}
+
+
+/* =========================================================
+   EXPANDED AREA
+========================================================= */
+
+.more-work-expanded {
+  margin-top: 5.5rem;
+
+  animation:
+    moreWorkReveal 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.more-work-expanded-heading {
+  display: flex;
+  align-items: center;
+
+  gap: 1.5rem;
+
+  margin-bottom: 2.5rem;
+}
+
+
+.more-work-expanded-heading > span {
+  flex-shrink: 0;
+
+  color: var(--gold);
+
+  font-size: 0.68rem;
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+}
+
+
+.more-work-expanded-line {
+  width: 100%;
+  height: 1px;
+
+  background: var(--line);
+}
+
+
+/* =========================================================
+   SHOW LESS
+========================================================= */
+
+.more-work-collapse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.75rem;
+
+  margin: 3rem auto 0;
+  padding: 0.9rem 1.3rem;
+
+  border: 1px solid rgba(74, 62, 49, 0.18);
+
+  background: transparent;
+
+  color: var(--brown);
+
+  font-size: 0.68rem;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    border-color 250ms ease,
+    color 250ms ease,
+    transform 250ms ease;
+}
+
+
+.more-work-collapse:hover {
+  border-color: var(--gold);
+
+  color: var(--gold);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+@keyframes moreWorkReveal {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .more-work-teaser {
+    margin-top: 4rem;
+  }
+
+
+  .more-work-heading {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 0.75rem;
+  }
+
+
+  .more-work-preview-grid {
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 0.7rem;
+  }
+
+
+  .more-work-preview-image {
+    height: 160px;
+  }
+
+
+  .more-work-preview-info > span {
+    font-size: 1rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .more-work-preview-grid {
+    grid-template-columns: 1fr;
+
+    gap: 1.75rem;
+  }
+
+
+  .more-work-preview-image {
+    height: 210px;
+  }
+
+
+ .more-work-preview-info > span {
+  font-size: 1.35rem;
+  white-space: nowrap;
+}
+
+
+  .more-work-toggle {
+    margin-top: 3rem;
+  }
+
+
+  .more-work-expanded {
+    margin-top: 4rem;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .more-work-preview,
+  .more-work-preview-image img,
+  .more-work-preview-info svg,
+  .more-work-toggle strong::after,
+  .more-work-toggle-arrow,
+  .more-work-collapse,
+  .more-work-expanded {
+    transition: none;
+    animation: none;
+  }
+
+
+  .more-work-preview:hover,
+  .more-work-collapse:hover {
+    transform: none;
+  }
+
+
+  .more-work-preview:hover
+  .more-work-preview-image img {
+    transform: none;
+  }
+}
+/* =========================================================
+   ABOUT — LARGER TYPOGRAPHY
+   Keep at the bottom of the CSS file
+========================================================= */
+
+/* Main About body text */
+
+.about-copy p {
+  font-size: 1.18rem;
+  line-height: 1.85;
+}
+
+
+/* Opening statement:
+   "I'm a visionary at heart..." */
+
+.about-copy .about-lead {
+  font-size: clamp(1.55rem, 1.8vw, 1.9rem);
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+
+/* Closing statement:
+   "I lead with vision and strike with impact." */
+
+.about-closing {
+  font-size: clamp(1.35rem, 1.6vw, 1.7rem) !important;
+  line-height: 1.6 !important;
+}
+
+
+/* Guiding Principle label */
+
+.about-note > span {
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+}
+
+
+/* Philippians 4:13 quote */
+
+.about-note .about-verse {
+  font-size: clamp(1.55rem, 1.9vw, 2rem);
+  line-height: 1.45;
+}
+
+
+/* Scripture reference */
+
+.about-note small {
+  font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .about-copy p {
+    font-size: 1.08rem;
+  }
+
+  .about-copy .about-lead {
+    font-size: 1.5rem;
+  }
+
+  .about-closing {
+    font-size: 1.35rem !important;
+  }
+
+  .about-note .about-verse {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .about-copy p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .about-copy .about-lead {
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+
+  .about-closing {
+    font-size: 1.25rem !important;
+  }
+
+  .about-note .about-verse {
+    font-size: 1.4rem;
+  }
+}
+
+/* =========================================================
+   CONTACT — LARGER TYPOGRAPHY
+========================================================= */
+
+/* Supporting paragraph */
+
+.contact-copy {
+  max-width: 720px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+
+/* More breathing room around each contact link */
+
+.contact-link {
+  grid-template-columns: 130px 1fr 36px;
+  gap: 1.5rem;
+  padding: 1.65rem 0;
+}
+
+
+/* EMAIL / LINKEDIN / GITHUB labels */
+
+.contact-link > span:first-child {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+
+/* Actual links */
+
+.contact-link > span:nth-child(2) {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+
+/* Larger arrow */
+
+.contact-link svg {
+  width: 22px;
+  height: 22px;
+
+  transition: transform 220ms ease;
+}
+
+
+/* Small interaction */
+
+.contact-link:hover svg {
+  transform: translate(4px, -4px);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 580px) {
+
+  .contact-copy {
+    font-size: 1.05rem;
+  }
+
+  .contact-link {
+    grid-template-columns: 82px minmax(0, 1fr) 24px;
+    gap: 0.75rem;
+    padding: 1.4rem 0;
+  }
+
+  .contact-link > span:first-child {
+    font-size: 0.68rem;
+  }
+
+  .contact-link > span:nth-child(2) {
+    font-size: 1.15rem;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-link svg {
+    width: 19px;
+    height: 19px;
+  }
+}
+/* =========================================================
+   HERO — SLOW STAGGERED CREDENTIAL REVEAL
+========================================================= */
+
+.hero-credential-card {
+  opacity: 0;
+  transform: translateY(14px);
+
+  animation: heroCredentialReveal 1.15s
+    cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* First card */
+.hero-credential-card:nth-child(1) {
+  animation-delay: 0.8s;
+}
+
+/* Second card */
+.hero-credential-card:nth-child(2) {
+  animation-delay: 1.6s;
+}
+
+/* Third card */
+.hero-credential-card:nth-child(3) {
+  animation-delay: 2.4s;
+}
+
+@keyframes heroCredentialReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero-credential-card {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+/* =========================================================
+   HERO — INTERACTIVE POLISH
+========================================================= */
+
+
+/* =========================================================
+   1. CREDENTIAL CARD HOVER
+========================================================= */
+
+.hero-credentials span {
+  cursor: default;
+
+  transition:
+    transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 300ms ease,
+    box-shadow 350ms ease,
+    color 300ms ease;
+}
+
+.hero-credentials span:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(177, 139, 76, 0.55);
+
+  box-shadow:
+    0 12px 28px rgba(48, 36, 29, 0.08);
+
+  color: var(--gold);
+}
+
+
+/* =========================================================
+   2. HERO PORTRAIT MICRO-MOVEMENT
+========================================================= */
+
+.hero-photo-frame {
+  overflow: hidden;
+}
+
+.hero-photo {
+  transition:
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 600ms ease;
+}
+
+.hero-photo-frame:hover .hero-photo {
+  transform: scale(1.025);
+}
+
+
+/* =========================================================
+   3. SCROLL TO EXPLORE
+========================================================= */
+
+.scroll-cue svg {
+  animation: heroScrollCue 2.4s ease-in-out infinite;
+}
+
+@keyframes heroScrollCue {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+
+/* Slight response when hovering the entire scroll cue */
+
+.scroll-cue {
+  transition:
+    color 250ms ease,
+    opacity 250ms ease;
+}
+
+.scroll-cue:hover {
+  color: var(--gold);
+}
+
+.scroll-cue:hover svg {
+  animation-play-state: paused;
+
+  transform: translateY(5px);
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-credentials span,
+  .hero-photo,
+  .scroll-cue,
+  .scroll-cue svg {
+    transition: none;
+    animation: none;
+  }
+
+  .hero-credentials span:hover,
+  .hero-photo-frame:hover .hero-photo,
+  .scroll-cue:hover svg {
+    transform: none;
+  }
+}
+/* =========================================================
+   HERO — CENTERED SCROLL CUE
+========================================================= */
+
+.scroll-cue {
+  left: 50%;
+  right: auto;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+
+  gap: 0.7rem;
+
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  letter-spacing: 0.11em;
+
+  white-space: nowrap;
+}
+
+.scroll-cue svg {
+  width: 19px;
+  height: 19px;
+}
